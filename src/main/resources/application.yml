@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/spring?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+        username: thanhnd
+        password: 123456
+
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 1089174842231-ub5a246nivl51ovua089gdgcaa3pvf13.apps.googleusercontent.com
+              clientSecret: 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
+              redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+              scope:
+                - email
+                - profile
